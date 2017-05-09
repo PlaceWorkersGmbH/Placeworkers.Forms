@@ -82,12 +82,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer\ExtendedListViewRenderer.cs" />
+    <Compile Include="Renderer\NavigationCellRenderer.cs" />
+    <Compile Include="Helper\AndroidImageHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderer\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
   <Import Project="..\Placeworkers.Forms.Shared\Placeworkers.Forms.Shared.projitems" Label="Shared" Condition="Exists('..\Placeworkers.Forms.Shared\Placeworkers.Forms.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
