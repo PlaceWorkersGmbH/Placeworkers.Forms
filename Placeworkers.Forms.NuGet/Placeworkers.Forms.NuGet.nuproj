@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF6D6556-7258-4A65-9845-D3D5D1E58822}</ProjectGuid>
+    <Description>Custom/Extended Forms Controls</Description>
+    <PackageId>Placeworkers.Forms</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Placeworkers</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Placeworkers.Forms</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>Placeworkers.Forms.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Owners>PlaceWorkers</Owners>
+    <Copyright>PlaceWorkers</Copyright>
+    <Title>Placeworkers.Form</Title>
+    <Summary>Custom Controls for Xamarin.Forms</Summary>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Placeworkers.Forms.Android\Placeworkers.Forms.Android.csproj">
+      <Project>{9A6AB9C0-1C4A-4508-9ACE-03783992A89E}</Project>
+      <Name>Placeworkers.Forms.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Placeworkers.Forms.iOS\Placeworkers.Forms.iOS.csproj">
+      <Project>{B837699B-C75F-4423-9C91-04F0C5DBF4B6}</Project>
+      <Name>Placeworkers.Forms.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.1.248</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>
