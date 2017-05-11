@@ -11,8 +11,11 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ExtendedListView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\DateTimePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
   </ItemGroup>
 </Project>
