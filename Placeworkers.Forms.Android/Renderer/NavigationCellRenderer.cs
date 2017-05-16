@@ -1,5 +1,5 @@
-﻿using System;
-using Android.Graphics.Drawables;
+﻿using System.Threading.Tasks;
+using Android.Support.V4.Content;
 using Android.Widget;
 using Placeworkers.Forms;
 using Xamarin.Forms;
@@ -14,12 +14,13 @@ namespace Placeworkers.Forms
 		{
 			var navCell = (NavigationCell)item;
 			var cell = base.GetCellCore(item, convertView, parent, context) as BaseCellView;
-			if (cell != null && navCell.Source != null) {
-				AndroidImageHelper.GetBitmapFromImageSourceAsync(navCell.Source, cell.Context).ContinueWith((task) => { 
-					var imageView = new ImageView(cell.Context);
-					imageView.SetImageBitmap(task.Result);
-					cell.SetAccessoryView(imageView);
-				});
+			if (cell != null && navCell.UseAndroidAccessory) {
+				var arrow = new Android.Support.V7.Graphics.Drawable.DrawerArrowDrawable(cell.Context);
+				arrow.Progress = 1.0f;
+				arrow.Direction = Android.Support.V7.Graphics.Drawable.DrawerArrowDrawable.ArrowDirectionRight;
+				var imageView = new ImageView(cell.Context);
+				imageView.SetImageDrawable(arrow);
+				cell.SetAccessoryView(imageView);
 			}
 			return cell;
 		}

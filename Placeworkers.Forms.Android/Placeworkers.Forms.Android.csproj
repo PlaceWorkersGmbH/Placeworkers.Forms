@@ -110,6 +110,8 @@
     <Compile Include="Renderer\NavigationCellRenderer.cs" />
     <Compile Include="Helper\AndroidImageHelper.cs" />
     <Compile Include="Renderer\DateTimePickerRenderer.cs" />
+    <Compile Include="Views\ArrowRightDrawable.cs" />
+    <Compile Include="Renderer\NavigationButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -117,6 +119,7 @@
   <ItemGroup>
     <Folder Include="Renderer\" />
     <Folder Include="Helper\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="..\Placeworkers.Forms.Shared\Placeworkers.Forms.Shared.projitems" Label="Shared" Condition="Exists('..\Placeworkers.Forms.Shared\Placeworkers.Forms.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\DateTimePicker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\NavigationButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />

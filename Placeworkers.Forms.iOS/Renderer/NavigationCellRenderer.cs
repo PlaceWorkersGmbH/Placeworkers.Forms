@@ -12,15 +12,8 @@ namespace Placeworkers.Forms
 		{
 			var navCell = (NavigationCell)item;
 			var cell = base.GetCell(item, reusableCell, tv);
-			if (cell != null) {
-				if (navCell.UseIOSAccessory)
-				{
-					cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
-				}
-				else if(navCell.Source != null)
-				{ 
-					cell.AccessoryView = new UIImageView(IosImageHelper.GetUIImageFromImageSourceAsync(navCell.Source).Result);
-				}
+			if (cell != null && navCell.UseIOSAccessory) {
+				cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
 			}
 			return cell;
 		}
