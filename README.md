@@ -1,5 +1,4 @@
 # Placeworkers.Forms
--
 is a custom controls library for Xamarin.Form with support for iOS and Android.
 
 #### Included Controls:
