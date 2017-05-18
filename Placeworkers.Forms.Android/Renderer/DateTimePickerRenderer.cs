@@ -1,76 +1,189 @@
-﻿using System;
-using System.ComponentModel;
-using Android.App;
-using Placeworkers.Forms;
+﻿using Placeworkers.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Android.Widget;
+using Android.App;
+using Placeworkers.Forms.Helper;
+using System;
+using System.ComponentModel;
+using AView = Android.Views.View;
+using Object = Java.Lang.Object;
 using Android.Text.Format;
-using ATimePicker = Android.Widget.TimePicker;
 
 [assembly: ExportRenderer(typeof(DateTimePicker), typeof(DateTimePickerRenderer))]
 namespace Placeworkers.Forms
 {
-    public class DateTimePickerRenderer : DatePickerRenderer, TimePickerDialog.IOnTimeSetListener
+    public class DateTimePickerRenderer : ViewRenderer<DateTimePicker, EditText>, TimePickerDialog.IOnTimeSetListener
     {
-        AlertDialog _dialog;
-        IElementController ElementController => Element as IElementController;
-        DateTime CurrentDateTime => (Element as DateTimePicker).Date;
+        DatePickerDialog _dateDialog;
+        TimePickerDialog _timeDialog;
+        bool _disposed;
+        TextColorSwitcher _textColorSwitcher;
 
-        protected override void OnElementChanged(ElementChangedEventArgs<DatePicker> e)
+        public DateTimePickerRenderer()
+        {
+            AutoPackage = false;
+        }
+
+		void OnTextFieldClicked()
+		{
+			DateTimePicker view = Element;
+
+			CreateDatePickerDialog(view.Date.Year, view.Date.Month - 1, view.Date.Day);
+            CreateTimePickerDialog(view.Date.Hour, view.Date.Minute);
+
+			UpdateMinimumDate();
+			UpdateMaximumDate();
+
+            if (HasCancelEvent()){
+                _dateDialog.CancelEvent += OnCancelButtonClicked;
+                _timeDialog.CancelEvent += OnCancelButtonClicked;
+            }
+
+			_dateDialog.Show();
+		}
+
+		void CreateDatePickerDialog(int year, int month, int day)
+		{
+			DateTimePicker view = Element;
+			_dateDialog = new DatePickerDialog(Context, (o, e) =>
+			{
+                var oldDate = view.Date;
+                var newDate = e.Date;
+                view.Date = new DateTime(newDate.Year, newDate.Month, newDate.Day, oldDate.Hour, oldDate.Minute, 0, DateTimeKind.Utc);
+                if (HasCancelEvent()){
+                    _dateDialog.CancelEvent -= OnCancelButtonClicked;
+                }
+				_dateDialog = null;
+                _timeDialog.Show();
+			}, year, month, day);
+		}
+
+        void CreateTimePickerDialog(int hour, int minute)
+        {
+            bool is24HourFormat = DateFormat.Is24HourFormat(Context);
+            _timeDialog = new TimePickerDialog(Context, this, hour, minute, is24HourFormat);
+        }
+
+        protected override EditText CreateNativeControl()
+        {
+            return new EditText(Context) { Focusable = false, Clickable = true, Tag = this };
+        }
+
+        protected override void OnElementChanged(ElementChangedEventArgs<DateTimePicker> e)
         {
             base.OnElementChanged(e);
-            Control.Text = CurrentDateTime.ToString(Element.Format);
+
+            if (e.OldElement == null)
+            {
+                var textField = CreateNativeControl();
+                textField.SetOnClickListener(TextFieldClickHandler.Instance);
+                SetNativeControl(textField);
+                _textColorSwitcher = new TextColorSwitcher(textField.TextColors);
+            }
+            SetDate(Element.Date);
+            UpdateMinimumDate();
+            UpdateMaximumDate();
+            UpdateTextColor();
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName.Equals("IsFocused") && !Element.IsFocused)
-            {
-                HandleTimePicker();
-            }
             base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName == DateTimePicker.DateProperty.PropertyName || e.PropertyName == Xamarin.Forms.DatePicker.FormatProperty.PropertyName)
+                SetDate(Element.Date);
+            else if (e.PropertyName == Xamarin.Forms.DatePicker.MinimumDateProperty.PropertyName)
+                UpdateMinimumDate();
+            else if (e.PropertyName == Xamarin.Forms.DatePicker.MaximumDateProperty.PropertyName)
+                UpdateMaximumDate();
+            if (e.PropertyName == Xamarin.Forms.DatePicker.TextColorProperty.PropertyName)
+                UpdateTextColor();
         }
 
-        private void HandleTimePicker()
+		void OnCancelButtonClicked(object sender, EventArgs e)
+		{
+			Element.Unfocus();
+		}
+
+        void SetDate(DateTime date)
         {
-            var dt = CurrentDateTime;
-            bool is24HourFormat = DateFormat.Is24HourFormat(Context);
-            _dialog = new TimePickerDialog(Context, this, dt.Hour, dt.Minute, is24HourFormat);
-            if (HasCancelEvent())
+            Control.Text = date.ToString(Element.Format);
+        }
+
+		public void OnTimeSet(Android.Widget.TimePicker view, int hourOfDay, int minute)
+		{
+			var dt = Element.Date;
+			var newDT = new DateTime(dt.Year, dt.Month, dt.Day, hourOfDay, minute, 0, DateTimeKind.Utc);
+			Element.Date = newDT;
+			Control.ClearFocus();
+			if (HasCancelEvent())
+			{
+				_timeDialog.CancelEvent -= OnCancelButtonClicked;
+			}
+			_timeDialog = null;
+		}
+
+		void UpdateMaximumDate()
+        {
+            if (_dateDialog != null)
             {
-                _dialog.CancelEvent += OnDialogCancel;
+                _dateDialog.DatePicker.MaxDate = (long)Element.MaximumDate.ToUniversalTime().Subtract(DateTime.MinValue.AddYears(1969)).TotalMilliseconds;
             }
-            _dialog.Show();
         }
 
-        void TimePickerDialog.IOnTimeSetListener.OnTimeSet(ATimePicker view, int hourOfDay, int minute)
+        void UpdateMinimumDate()
         {
-            var dt = Element.Date;
-            var newDT = new DateTime(dt.Year, dt.Month, dt.Day, hourOfDay, minute, 0, DateTimeKind.Utc);
-            HandleDateChange(newDT);
-        }
-
-        void OnDialogCancel(object sender, EventArgs e)
-        {
-            var dtFromDatePicker = Element.Date;
-            var dt = new DateTime(dtFromDatePicker.Year, dtFromDatePicker.Month, dtFromDatePicker.Day, CurrentDateTime.Hour, CurrentDateTime.Minute, 0);
-            HandleDateChange(dt);
-        }
-
-        private void HandleDateChange(DateTime dateTime)
-        {
-            ElementController.SetValueFromRenderer(DateTimePicker.DateProperty, dateTime);
-            Control.Text = dateTime.ToString(Element.Format);
-            if (HasCancelEvent())
+            if (_dateDialog != null)
             {
-                _dialog.CancelEvent -= OnDialogCancel;
+                _dateDialog.DatePicker.MinDate = (long)Element.MinimumDate.ToUniversalTime().Subtract(DateTime.MinValue.AddYears(1969)).TotalMilliseconds;
             }
-            _dialog = null;
         }
 
-        private bool HasCancelEvent()
+        void UpdateTextColor()
         {
-            return Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop;
+            _textColorSwitcher?.UpdateTextColor(Control, Element.TextColor);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && !_disposed)
+            {
+                _disposed = true;
+                if (_dateDialog != null)
+                {
+                    if (HasCancelEvent()){
+                        _dateDialog.CancelEvent -= OnCancelButtonClicked;
+                    }
+                    _dateDialog.Hide();
+                    _dateDialog.Dispose();
+                    _dateDialog = null;
+                }
+                if(_timeDialog != null){
+					if (HasCancelEvent())
+					{
+						_timeDialog.CancelEvent -= OnCancelButtonClicked;
+					}
+					_timeDialog.Hide();
+					_timeDialog.Dispose();
+					_timeDialog = null;
+                }
+            }
+            base.Dispose(disposing);
+        }
+
+		private bool HasCancelEvent()
+		{
+			return Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop;
+		}
+
+        class TextFieldClickHandler : Object, IOnClickListener
+		{
+			public static readonly TextFieldClickHandler Instance = new TextFieldClickHandler();
+
+			public void OnClick(AView v)
+			{
+				((DateTimePickerRenderer)v.Tag).OnTextFieldClicked();
+			}
+		}
     }
 }

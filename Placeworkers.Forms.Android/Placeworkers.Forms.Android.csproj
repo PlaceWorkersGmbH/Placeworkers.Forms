@@ -112,6 +112,7 @@
     <Compile Include="Renderer\DateTimePickerRenderer.cs" />
     <Compile Include="Views\ArrowRightDrawable.cs" />
     <Compile Include="Renderer\NavigationButtonRenderer.cs" />
+    <Compile Include="Helper\TextColorSwitcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
