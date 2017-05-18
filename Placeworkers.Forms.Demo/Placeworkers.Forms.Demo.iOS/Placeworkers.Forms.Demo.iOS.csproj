@@ -112,6 +112,24 @@
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRight.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRight.imageset\arrow_right.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRight.imageset\arrow_right%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ArrowRight.imageset\arrow_right%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-58.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-87.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-80.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-120.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-120_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-180.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-29_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-58_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-40.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-80_2.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-76.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-152.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-167.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -130,6 +148,9 @@
       <Project>{B837699B-C75F-4423-9C91-04F0C5DBF4B6}</Project>
       <Name>Placeworkers.Forms.iOS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images.xcassets\ArrowRight.imageset\" />
   </ItemGroup>
   <Import Project="..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.projitems" Label="Shared" Condition="Exists('..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

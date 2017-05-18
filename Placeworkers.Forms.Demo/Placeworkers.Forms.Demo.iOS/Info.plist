@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>Placeworkers.Forms.Demo</string>
+	<string>PW.Forms</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.placeworkers.placeworkers-forms-demo</string>
 	<key>CFBundleShortVersionString</key>
@@ -47,6 +47,10 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleName</key>
-	<string>Placeworkers.Forms.Demo</string>
+	<string>PW.Forms</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>

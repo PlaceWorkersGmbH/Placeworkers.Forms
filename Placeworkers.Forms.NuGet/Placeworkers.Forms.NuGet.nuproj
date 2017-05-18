@@ -8,7 +8,7 @@
     <Description>Custom/Extended Forms Controls</Description>
     <PackageId>Placeworkers.Forms</PackageId>
     <PackageVersion>1.0.0</PackageVersion>
-    <Authors>Placeworkers</Authors>
+    <Authors>PlaceWorkers GmbH</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
@@ -20,6 +20,8 @@
     <Copyright>PlaceWorkers</Copyright>
     <Title>Placeworkers.Form</Title>
     <Summary>Custom Controls for Xamarin.Forms</Summary>
+    <PackageTags>Xamarin.Forms</PackageTags>
+    <PackageLicenseUrl>MIT</PackageLicenseUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

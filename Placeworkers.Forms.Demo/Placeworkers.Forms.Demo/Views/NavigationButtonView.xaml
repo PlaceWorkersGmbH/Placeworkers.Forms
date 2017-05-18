@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	 x:Class="Placeworkers.Forms.Demo.NavigationButtonView" xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms">
-	<ContentPage.Content>
-		<StackLayout Padding="5">
-			<pw:NavigationButton 
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
+    x:Class="Placeworkers.Forms.Demo.NavigationButtonView"
+    Title="NavigationButton"
+    >
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <pw:NavigationButton 
                 Text="Navigation" 
-                BorderColor="#25b3b2" BorderWidth="1" 
-                TextColor="#25b3b2" BackgroundColor="#ccc" 
-                Image="arrow_right.png"/>
-		</StackLayout>
-	</ContentPage.Content>
+                BorderColor="#94c11f" BorderWidth="1" 
+                TextColor="#94c11f" BackgroundColor="#DDD" 
+                FontAttributes="Bold" Image="ArrowRight" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

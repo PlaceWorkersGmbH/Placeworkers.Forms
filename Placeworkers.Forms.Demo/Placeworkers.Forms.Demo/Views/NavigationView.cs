@@ -7,7 +7,7 @@ namespace Placeworkers.Forms.Demo.Views
 	{
 		public NavigationView() {
 			BarTextColor = Color.White;
-			BarBackgroundColor = Color.FromRgb(37, 179, 178);
+            BarBackgroundColor = Color.FromHex("#94c11f");
 		}
 	}
 }
