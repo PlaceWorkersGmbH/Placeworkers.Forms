@@ -10,7 +10,7 @@ is a custom controls library for Xamarin.Form with support for iOS and Android.
 - **NavicationCell:** Standard TextCell with DisclosureIndicator on right side (AccessoryView). Uses Right DrawerArrowDrawable as right arrow on Android.
 - **ExtendedListView:** Standard ListView with option to disable scrolling.
 
-#### Usage:
+### Usage
 
 Add Placeworkers.Forms reference to your projects.
 	
