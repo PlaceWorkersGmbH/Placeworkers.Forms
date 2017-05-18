@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="Placeworkers.Forms.Demo.Views.DateTimePickerView"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
+             Title="DateTimePicker">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            <Label Text="DateTimePicker" />
+            <pw:DateTimePicker VerticalOptions="Fill"
+                               Date="{Binding Date}"
+                               Format="yyyy-MM-dd HH:mm" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

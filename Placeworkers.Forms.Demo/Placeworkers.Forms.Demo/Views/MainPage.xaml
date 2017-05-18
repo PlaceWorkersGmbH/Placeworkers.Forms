@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Placeworkers.Forms.Demo.Views.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
+             Title="Overview"
+             prism:ViewModelLocator.AutowireViewModel="True">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <pw:ExtendedListView x:Name="List"
+                             HeightRequest="174"
+                             VerticalOptions="Fill"
+                             BackgroundColor="#EEE"
+                             IsScrollable="false"
+                             ItemsSource="{Binding ItemsSource}">
+            <pw:ExtendedListView.ItemTemplate>
+                <DataTemplate>
+                    <pw:NavigationCell Detail="{Binding Detail}"
+                                       Tapped="Handle_Tapped"
+                                       Text="{Binding Title}"
+                                       TextColor="#111"
+                                       UseAndroidAccessory="true"
+                                       UseIOSAccessory="true" />
+                </DataTemplate>
+            </pw:ExtendedListView.ItemTemplate>
+        </pw:ExtendedListView>
+    </StackLayout>
+</ContentPage>

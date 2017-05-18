@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Placeworkers.Forms.Android"
 EndProject
 Project("{5DD5E4FA-CB73-4610-85AB-557B54E96AA9}") = "Placeworkers.Forms.NuGet", "Placeworkers.Forms.NuGet\Placeworkers.Forms.NuGet.nuproj", "{DF6D6556-7258-4A65-9845-D3D5D1E58822}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Placeworkers.Forms.Demo", "..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.shproj", "{476236CA-2175-47E4-A134-42F96DB160A8}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Placeworkers.Forms.Demo", "Placeworkers.Forms.Demo\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.shproj", "{476236CA-2175-47E4-A134-42F96DB160A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Placeworkers.Forms.Demo.Droid", "..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.Droid\Placeworkers.Forms.Demo.Droid.csproj", "{F53CE130-5996-45EA-984E-8B2A2BE38073}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Placeworkers.Forms.Demo.Droid", "Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.Droid\Placeworkers.Forms.Demo.Droid.csproj", "{F53CE130-5996-45EA-984E-8B2A2BE38073}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Placeworkers.Forms.Demo.iOS", "..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.iOS\Placeworkers.Forms.Demo.iOS.csproj", "{93A44763-184A-4873-A0B5-BAAED2E2CF1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Placeworkers.Forms.Demo.iOS", "Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.iOS\Placeworkers.Forms.Demo.iOS.csproj", "{93A44763-184A-4873-A0B5-BAAED2E2CF1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
