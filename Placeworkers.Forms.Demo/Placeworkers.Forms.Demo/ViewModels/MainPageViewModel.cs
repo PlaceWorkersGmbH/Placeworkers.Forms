@@ -20,7 +20,8 @@ namespace Placeworkers.Forms.Demo.ViewModels
             });
             ItemsSource = new List<Item> { 
                 new Item { Title = "DateTimePicker", Detail="Entry element like a DatePicker", Page="DateTimePickerView" },
-				new Item { Title = "NavigationButton", Detail="Button for navigation purposes", Page="NavigationButtonView" }
+				new Item { Title = "NavigationButton", Detail="Button for navigation purposes", Page="NavigationButtonView" },
+				new Item { Title = "Checkbox", Detail="Checkbox with Text", Page="CheckboxView" }
             };
         }
 

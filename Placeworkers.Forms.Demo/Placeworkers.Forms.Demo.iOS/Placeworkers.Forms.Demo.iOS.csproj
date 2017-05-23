@@ -130,6 +130,12 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-76.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-152.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\appIcon-167.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxSelected.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxUnselected.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxSelected.imageset\CheckboxSelected_20.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxSelected.imageset\CheckboxSelected.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxUnselected.imageset\checkbox.png" />
+    <ImageAsset Include="Resources\Images.xcassets\CheckboxUnselected.imageset\checkbox_20.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -151,6 +157,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images.xcassets\ArrowRight.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CheckboxSelected.imageset\" />
+    <Folder Include="Resources\Images.xcassets\CheckboxUnselected.imageset\" />
   </ItemGroup>
   <Import Project="..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.projitems" Label="Shared" Condition="Exists('..\Placeworkers.Forms.Demo\Placeworkers.Forms.Demo.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

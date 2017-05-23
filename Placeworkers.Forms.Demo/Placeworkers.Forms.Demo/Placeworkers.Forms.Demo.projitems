@@ -21,6 +21,9 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\NavigationButtonView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\CheckboxView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -38,5 +41,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\NavigationButtonView.xaml.cs">
       <DependentUpon>NavigationButtonView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CheckboxView.xaml.cs">
+      <DependentUpon>CheckboxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CheckboxViewModel.cs" />
   </ItemGroup>
 </Project>

@@ -9,10 +9,17 @@ is a custom controls library for Xamarin.Form with support for iOS and Android.
 - **NavigationButton:** Button with left text alignment and a possible right aligned image
 - **NavicationCell:** Standard TextCell with DisclosureIndicator on right side (AccessoryView). Uses Right DrawerArrowDrawable as right arrow on Android.
 - **ExtendedListView:** Standard ListView with option to disable scrolling.
+- **Checkbox:** Checkbox image on left side and text on right side. Needs 2 images for the checkbox image to work properly.
 
 ### Usage
 
 Add Placeworkers.Forms reference to your projects.
+
+Add
+
+	Placeworkers.Forms.Initializer.Init();
+
+after Xamarin.Forms init.	
 	
 ##### XAML:
 

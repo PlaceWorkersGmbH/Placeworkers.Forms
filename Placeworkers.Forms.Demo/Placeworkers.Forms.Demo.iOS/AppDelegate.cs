@@ -27,14 +27,9 @@ namespace Placeworkers.Forms.Demo.iOS
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
 			global::Xamarin.Forms.Forms.Init();
-
+            Initializer.Init();
 			LoadApplication(new App(new iOSInitializer()));
-
-			var result = base.FinishedLaunching(app, options);
-			//UIView.Appearance.TintColor = UIColor.FromRGB(37, 179, 178);
-			UIApplication.SharedApplication.KeyWindow.TintColor = UIColor.Green;
-			//UIApplication.SharedApplication.KeyWindow.TintColor = UIColor.FromRGB(37, 179, 178);
-			return result;
+			return base.FinishedLaunching(app, options); ;
 		}
 	}
 

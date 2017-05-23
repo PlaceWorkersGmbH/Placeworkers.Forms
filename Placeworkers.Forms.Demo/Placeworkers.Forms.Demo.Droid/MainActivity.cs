@@ -22,6 +22,7 @@ namespace Placeworkers.Forms.Demo.Droid
 			TabLayoutResource = Resource.Layout.tabs;
 			base.OnCreate(bundle);
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+            Initializer.Init();
 			LoadApplication(new App(new AndroidInitializer()));
 		}
 	}

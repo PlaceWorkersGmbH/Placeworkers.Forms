@@ -162,6 +162,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ArrowRight.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\CheckboxUnselected.png" />
+    <AndroidResource Include="Resources\drawable\CheckboxSelected.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Placeworkers.Forms.Android\Placeworkers.Forms.Android.csproj">

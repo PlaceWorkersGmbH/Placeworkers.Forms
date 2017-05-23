@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DF6D6556-7258-4A65-9845-D3D5D1E58822}</ProjectGuid>
-    <Description>Custom/Extended Forms Controls</Description>
+    <Description>Custom Controls for Xamarin.Forms</Description>
     <PackageId>Placeworkers.Forms</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
-    <Authors>PlaceWorkers GmbH</Authors>
+    <PackageVersion>1.0.1</PackageVersion>
+    <Authors>PlaceWorkers GmbH, Enrico Berndt</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
@@ -16,12 +16,14 @@
     <UsePartialTypes>false</UsePartialTypes>
     <AssemblyName>Placeworkers.Forms.NuGet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <Owners>PlaceWorkers</Owners>
-    <Copyright>PlaceWorkers</Copyright>
-    <Title>Placeworkers.Form</Title>
+    <Owners>PlaceWorkers GmbH</Owners>
+    <Copyright>PlaceWorkers GmbH</Copyright>
+    <Title>Placeworkers.Forms</Title>
     <Summary>Custom Controls for Xamarin.Forms</Summary>
     <PackageTags>Xamarin.Forms</PackageTags>
-    <PackageLicenseUrl>MIT</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/PlaceWorkersGmbH/Placeworkers.Forms/master/Placeworkers.Forms.Demo/Placeworkers.Forms.Demo.Droid/Resources/drawable-hdpi/icon.png</PackageIconUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

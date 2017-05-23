@@ -20,6 +20,7 @@ namespace Placeworkers.Forms.Demo
             Container.RegisterTypeForNavigation<NavigationView>();
             Container.RegisterTypeForNavigation<DateTimePickerView>();
 			Container.RegisterTypeForNavigation<NavigationButtonView>();
+            Container.RegisterTypeForNavigation<CheckboxView>();
 		}
 	}
 }
