@@ -13,15 +13,16 @@ namespace Placeworkers.Forms
             base.OnElementChanged(e);
             if (Element != null && Control != null)
             {
+                var navButton = Element as NavigationButton;
                 Control.HorizontalAlignment = UIKit.UIControlContentHorizontalAlignment.Left;
                 Control.VerticalAlignment = UIKit.UIControlContentVerticalAlignment.Center;
                 if (Control.ImageView.Image == null)
                 {
-                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, 15, 0, 0);
+                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, navButton.TextPaddingLeft, 0, 0);
                 }
                 else
                 {
-                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, 0, 0, 0);
+                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, navButton.TextPaddingLeft -10, 0, 0);
                     Control.TitleEdgeInsets = new UIKit.UIEdgeInsets(0, 0, 0, 0);
                     Control.ImageView.TrailingAnchor.ConstraintEqualTo(this.TrailingAnchor, -15).Active = true;
                     Control.ImageView.CenterYAnchor.ConstraintEqualTo(Control.CenterYAnchor, 0).Active = true;

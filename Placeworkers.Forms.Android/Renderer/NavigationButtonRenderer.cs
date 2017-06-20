@@ -11,7 +11,9 @@ namespace Placeworkers.Forms.Renderer
         protected override void OnElementChanged(Xamarin.Forms.Platform.Android.ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
-            if(Control != null){
+            if(Element != null && Control != null){
+                var navButton = Element as NavigationButton;
+                Control.SetPadding(navButton.TextPaddingLeft, Control.PaddingTop, Control.PaddingRight, Control.PaddingBottom);
                 Control.Gravity = Android.Views.GravityFlags.Left | Android.Views.GravityFlags.CenterVertical;
                 var compound = Control.GetCompoundDrawables();
                 Control.SetCompoundDrawables(null, null, compound[0], null);

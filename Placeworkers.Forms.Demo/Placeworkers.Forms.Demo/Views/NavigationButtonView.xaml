@@ -12,7 +12,12 @@
                 Text="Navigation" 
                 BorderColor="#94c11f" BorderWidth="1" 
                 TextColor="#94c11f" BackgroundColor="#DDD" 
-                FontAttributes="Bold" Image="ArrowRight" />
+                FontAttributes="Bold" Image="ArrowRight" TextPaddingLeft="30"/>
+            <pw:NavigationButton 
+                Text="Navigation 2" 
+                BorderColor="#94c11f" BorderWidth="1" 
+                TextColor="#94c11f" BackgroundColor="#DDD" 
+                FontAttributes="Bold" TextPaddingLeft="30"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
