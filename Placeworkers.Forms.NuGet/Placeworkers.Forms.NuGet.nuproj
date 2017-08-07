@@ -7,7 +7,7 @@
     <ProjectGuid>{DF6D6556-7258-4A65-9845-D3D5D1E58822}</ProjectGuid>
     <Description>Custom Controls for Xamarin.Forms</Description>
     <PackageId>Placeworkers.Forms</PackageId>
-    <PackageVersion>1.0.3</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
     <Authors>PlaceWorkers GmbH, Enrico Berndt</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

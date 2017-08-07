@@ -11,6 +11,10 @@
     <AssemblyName>Placeworkers.Forms</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <ReleaseVersion>1.0.3</ReleaseVersion>
+    <PackageId>Placeworkers.Forms</PackageId>
+    <PackageVersion>1.0.4</PackageVersion>
+    <Authors>PlaceWorkers</Authors>
+    <Description>Custom Controls for Xamarin.Forms</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

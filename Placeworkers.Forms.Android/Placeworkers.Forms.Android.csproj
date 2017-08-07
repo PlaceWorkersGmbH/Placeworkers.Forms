@@ -15,6 +15,10 @@
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <ReleaseVersion>1.0.3</ReleaseVersion>
+    <PackageId>Placeworkers.Forms</PackageId>
+    <PackageVersion>1.0.4</PackageVersion>
+    <Authors>Placeworkers</Authors>
+    <Description>Custom Controls for Xamarin.Forms</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
