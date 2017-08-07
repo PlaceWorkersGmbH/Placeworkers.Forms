@@ -24,6 +24,7 @@
     <PackageLicenseUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/PlaceWorkersGmbH/Placeworkers.Forms/master/Placeworkers.Forms.Demo/Placeworkers.Forms.Demo.Droid/Resources/drawable-hdpi/icon.png</PackageIconUrl>
+    <ReleaseVersion>1.0.3</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
