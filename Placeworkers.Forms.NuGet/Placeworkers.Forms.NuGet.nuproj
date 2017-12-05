@@ -7,7 +7,7 @@
     <ProjectGuid>{DF6D6556-7258-4A65-9845-D3D5D1E58822}</ProjectGuid>
     <Description>Custom Controls for Xamarin.Forms</Description>
     <PackageId>Placeworkers.Forms</PackageId>
-    <PackageVersion>1.0.4</PackageVersion>
+    <PackageVersion>1.0.6</PackageVersion>
     <Authors>PlaceWorkers GmbH, Enrico Berndt</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -24,7 +24,7 @@
     <PackageLicenseUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/PlaceWorkersGmbH/Placeworkers.Forms/master/Placeworkers.Forms.Demo/Placeworkers.Forms.Demo.Droid/Resources/drawable-hdpi/icon.png</PackageIconUrl>
-    <ReleaseVersion>1.0.3</ReleaseVersion>
+    <ReleaseVersion>1.0.6</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging">
-      <Version>0.1.248</Version>
+      <Version>0.2.2</Version>
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
