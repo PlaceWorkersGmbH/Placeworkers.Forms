@@ -10,7 +10,7 @@ namespace Placeworkers.Forms
 {
 	public class NavigationCellRenderer : TextCellRenderer
 	{
-		protected override Android.Views.View GetCellCore(Xamarin.Forms.Cell item, Android.Views.View convertView, Android.Views.ViewGroup parent, Android.Content.Context context)
+		protected override Android.Views.View GetCellCore(Cell item, Android.Views.View convertView, Android.Views.ViewGroup parent, Android.Content.Context context)
 		{
 			var navCell = (NavigationCell)item;
 			var cell = base.GetCellCore(item, convertView, parent, context) as BaseCellView;

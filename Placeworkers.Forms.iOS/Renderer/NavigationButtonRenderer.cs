@@ -1,5 +1,4 @@
-﻿using System;
-using Placeworkers.Forms;
+﻿using Placeworkers.Forms;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -8,28 +7,39 @@ namespace Placeworkers.Forms
 {
     public class NavigationButtonRenderer : ButtonRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+        NavigationButton Button => Element as NavigationButton;
+
+        protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
             if (Element != null && Control != null)
             {
-                var navButton = Element as NavigationButton;
-                Control.HorizontalAlignment = UIKit.UIControlContentHorizontalAlignment.Left;
-                Control.VerticalAlignment = UIKit.UIControlContentVerticalAlignment.Center;
+                Control.HorizontalAlignment = UIControlContentHorizontalAlignment.Left;
+                Control.VerticalAlignment = UIControlContentVerticalAlignment.Center;
                 Control.LineBreakMode = UILineBreakMode.TailTruncation;
                 if (Control.ImageView.Image == null)
                 {
-                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, navButton.TextPaddingLeft, 0, 0);
+                    Control.ContentEdgeInsets = new UIEdgeInsets(0, Button.TextPaddingLeft, 0, 0);
                 }
                 else
                 {
-                    Control.ContentEdgeInsets = new UIKit.UIEdgeInsets(0, navButton.TextPaddingLeft -10, 0, 25);
-                    Control.TitleEdgeInsets = new UIKit.UIEdgeInsets(0, 0, 0, 0);
+                    Control.ContentEdgeInsets = new UIEdgeInsets(0, Button.TextPaddingLeft -10, 0, 25);
                     Control.ImageView.TrailingAnchor.ConstraintEqualTo(this.TrailingAnchor, -15).Active = true;
                     Control.ImageView.CenterYAnchor.ConstraintEqualTo(Control.CenterYAnchor, 0).Active = true;
                     Control.ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
                 }
+                Control.TitleEdgeInsets = new UIEdgeInsets(0, 0, 0, 0);
             }
+        }
+
+        protected override void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if (Control.ImageView.Image == null)
+                Control.ContentEdgeInsets = new UIEdgeInsets(0, Button.TextPaddingLeft, 0, 0);
+            else
+                Control.ContentEdgeInsets = new UIEdgeInsets(0, Button.TextPaddingLeft - 10, 0, 25);
+            Control.TitleEdgeInsets = new UIEdgeInsets(0, 0, 0, 0);
         }
     }
 }

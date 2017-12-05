@@ -9,7 +9,7 @@
             <Label Text="DateTimePicker" />
             <pw:DateTimePicker VerticalOptions="Fill"
                                Date="{Binding Date}"
-                               Format="yyyy-MM-dd HH:mm" />
+                               Format="yyyy-MM-dd HH:mm" MinimumDate="{Binding Minimum}" MaximumDate="{Binding Maximum}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

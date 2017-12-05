@@ -9,6 +9,7 @@ using System.ComponentModel;
 using AView = Android.Views.View;
 using Object = Java.Lang.Object;
 using Android.Text.Format;
+using Android.Content;
 
 [assembly: ExportRenderer(typeof(DateTimePicker), typeof(DateTimePickerRenderer))]
 namespace Placeworkers.Forms
@@ -20,7 +21,9 @@ namespace Placeworkers.Forms
         bool _disposed;
         TextColorSwitcher _textColorSwitcher;
 
-        public DateTimePickerRenderer()
+        public DateTimePickerRenderer() { AutoPackage = false; }
+
+        public DateTimePickerRenderer(Context context): base(context)
         {
             AutoPackage = false;
         }
