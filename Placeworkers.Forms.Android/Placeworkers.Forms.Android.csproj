@@ -15,7 +15,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <ReleaseVersion>1.0.7</ReleaseVersion>
+    <ReleaseVersion>1.0.8</ReleaseVersion>
     <PackageId>Placeworkers.Forms</PackageId>
     <PackageVersion>1.0.4</PackageVersion>
     <Authors>Placeworkers</Authors>

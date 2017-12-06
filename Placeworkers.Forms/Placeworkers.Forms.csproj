@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <ReleaseVersion>1.0.7</ReleaseVersion>
+    <ReleaseVersion>1.0.8</ReleaseVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,5 +12,8 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="NETStandard.Library" PrivateAssets="true" />
   </ItemGroup>
 </Project>
