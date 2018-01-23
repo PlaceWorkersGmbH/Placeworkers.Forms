@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
-using Microsoft.Practices.Unity;
-using Prism.Unity;
+﻿using Foundation;
+using Prism;
+using Prism.Ioc;
 using UIKit;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 
 namespace Placeworkers.Forms.Demo.iOS
 {
@@ -28,16 +22,16 @@ namespace Placeworkers.Forms.Demo.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
             Initializer.Init();
-			LoadApplication(new App(new iOSInitializer()));
-			return base.FinishedLaunching(app, options); ;
+			LoadApplication(new App(new IOSInitializer()));
+			return base.FinishedLaunching(app, options); 
 		}
 	}
 
-	public class iOSInitializer : IPlatformInitializer
-	{
-		public void RegisterTypes(IUnityContainer container)
-		{
+    public class IOSInitializer : IPlatformInitializer
+    {
+        public void RegisterTypes(IContainerRegistry containerRegistry)
+        {
 
-		}
-	}
+        }
+    }
 }

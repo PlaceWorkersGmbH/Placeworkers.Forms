@@ -1,5 +1,7 @@
 ﻿using Prism.Unity;
 using Placeworkers.Forms.Demo.Views;
+using Prism;
+using Prism.Ioc;
 
 namespace Placeworkers.Forms.Demo
 {
@@ -14,14 +16,14 @@ namespace Placeworkers.Forms.Demo
 			NavigationService.NavigateAsync("NavigationView/MainPage");
 		}
 
-		protected override void RegisterTypes()
-		{
-			Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<NavigationView>();
-            Container.RegisterTypeForNavigation<DateTimePickerView>();
-			Container.RegisterTypeForNavigation<NavigationButtonView>();
-            Container.RegisterTypeForNavigation<CheckboxView>();
-		}
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<NavigationView>();
+            containerRegistry.RegisterForNavigation<DateTimePickerView>();
+            containerRegistry.RegisterForNavigation<NavigationButtonView>();
+            containerRegistry.RegisterForNavigation<CheckboxView>();
+        }
 	}
 }
 
