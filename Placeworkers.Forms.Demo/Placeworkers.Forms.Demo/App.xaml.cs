@@ -12,7 +12,6 @@ namespace Placeworkers.Forms.Demo
 		protected override void OnInitialized()
 		{
 			InitializeComponent();
-			//var assembly = typeof(Placeworkers.Forms.NavigationCell).Assembly;
 			NavigationService.NavigateAsync("NavigationView/MainPage");
 		}
 

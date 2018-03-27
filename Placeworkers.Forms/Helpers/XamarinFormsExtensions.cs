@@ -14,8 +14,6 @@ namespace Placeworkers.Forms
 			return key;
 		}
 
-		public static bool IsDefault(this Color color) {
-			return true;
-		}
-	}
+        public static bool IsDefault(this Color color) => true;
+    }
 }

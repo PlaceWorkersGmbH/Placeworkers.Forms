@@ -10,12 +10,8 @@ namespace Placeworkers.Forms.Demo.ViewModels
         public DateTime Maximum { get; set; } = new DateTime(2017, 12, 1, 16, 42, 4, DateTimeKind.Utc);
 		public DateTime Date
 		{
-			get { return _date; }
-			set
-			{
-				_date = value;
-                RaisePropertyChanged(nameof(Date));
-			}
+			get => _date;
+			set { _date = value; RaisePropertyChanged(nameof(Date)); }
 		}
     }
 }

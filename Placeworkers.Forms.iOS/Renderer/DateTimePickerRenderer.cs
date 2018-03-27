@@ -12,14 +12,8 @@ namespace Placeworkers.Forms
 {
 	internal class NoCaretField : UITextField
 	{
-		public NoCaretField() : base(new RectangleF())
-		{
-		}
-
-		public override RectangleF GetCaretRectForPosition(UITextPosition position)
-		{
-			return new RectangleF();
-		}
+		public NoCaretField() : base(new RectangleF()) { }
+		public override RectangleF GetCaretRectForPosition(UITextPosition position) => new RectangleF();
 	}
 
 	public class DateTimePickerRenderer : ViewRenderer<DateTimePicker, UITextField>
@@ -33,19 +27,15 @@ namespace Placeworkers.Forms
 		protected override void OnElementChanged(ElementChangedEventArgs<DateTimePicker> e)
 		{
 			base.OnElementChanged(e);
-
 			if (e.NewElement == null)
 				return;
-
 			if (Control == null)
 			{
 				var entry = new NoCaretField { BorderStyle = UITextBorderStyle.RoundedRect };
-
 				entry.EditingDidBegin += OnStarted;
 				entry.EditingDidEnd += OnEnded;
 
 				_picker = new UIDatePicker { Mode = UIDatePickerMode.DateAndTime, TimeZone = new NSTimeZone("UTC") };
-
 				_picker.ValueChanged += HandleValueChanged;
 
 				var width = UIScreen.MainScreen.Bounds.Width;
@@ -57,9 +47,7 @@ namespace Placeworkers.Forms
 
 				entry.InputView = _picker;
 				entry.InputAccessoryView = toolbar;
-
 				_defaultTextColor = entry.TextColor;
-
 				SetNativeControl(entry);
 			}
 
@@ -72,14 +60,13 @@ namespace Placeworkers.Forms
 		protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			base.OnElementPropertyChanged(sender, e);
-
 			if (e.PropertyName == DateTimePicker.DateProperty.PropertyName || e.PropertyName == DatePicker.FormatProperty.PropertyName)
 				UpdateDateFromModel(true);
-			else if (e.PropertyName == DatePicker.MinimumDateProperty.PropertyName)
+			else if (e.PropertyName == DateTimePicker.MinimumDateProperty.PropertyName)
 				UpdateMinimumDate();
-			else if (e.PropertyName == DatePicker.MaximumDateProperty.PropertyName)
+            else if (e.PropertyName == DateTimePicker.MaximumDateProperty.PropertyName)
 				UpdateMaximumDate();
-			else if (e.PropertyName == DatePicker.TextColorProperty.PropertyName || e.PropertyName == VisualElement.IsEnabledProperty.PropertyName)
+            else if (e.PropertyName == DateTimePicker.TextColorProperty.PropertyName || e.PropertyName == VisualElement.IsEnabledProperty.PropertyName)
 				UpdateTextColor();
 		}
 
@@ -105,24 +92,16 @@ namespace Placeworkers.Forms
 		{
 			if (_picker.Date.ToDateTime() != Element.Date)
 				_picker.SetDate(Element.Date.ToNSDate(), animate);
-			
 			Control.Text = Element.Date.ToString(Element.Format);
 		}
 
-		void UpdateMaximumDate()
-		{
-			_picker.MaximumDate = Element.MaximumDate.ToNSDate();
-		}
+        void UpdateMaximumDate() => _picker.MaximumDate = ((DateTimePicker)Element).MaximumDate.ToNSDate();
 
-		void UpdateMinimumDate()
-		{
-			_picker.MinimumDate = Element.MinimumDate.ToNSDate();
-		}
+        void UpdateMinimumDate() => _picker.MinimumDate = ((DateTimePicker)Element).MinimumDate.ToNSDate();
 
 		void UpdateTextColor()
 		{
 			var textColor = Element.TextColor;
-
 			if (textColor.IsDefault() || !Element.IsEnabled)
 				Control.TextColor = _defaultTextColor;
 			else
@@ -133,13 +112,10 @@ namespace Placeworkers.Forms
 		{
 			if (_disposed)
 				return;
-
 			_disposed = true;
-
 			if (disposing)
 			{
 				_defaultTextColor = null;
-
 				if (_picker != null)
 				{
 					_picker.RemoveFromSuperview();
@@ -147,14 +123,12 @@ namespace Placeworkers.Forms
 					_picker.Dispose();
 					_picker = null;
 				}
-
 				if (Control != null)
 				{
 					Control.EditingDidBegin -= OnStarted;
 					Control.EditingDidEnd -= OnEnded;
 				}
 			}
-
 			base.Dispose(disposing);
 		}
 	}
