@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
     x:Class="Placeworkers.Forms.Demo.NavigationButtonView"
@@ -8,16 +8,26 @@
     >
     <ContentPage.Content>
         <StackLayout Padding="5">
-            <pw:NavigationButton 
-                Text="Navigation Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet." 
-                BorderColor="#94c11f" BorderWidth="1" 
-                TextColor="#94c11f" BackgroundColor="#DDD" 
-                FontAttributes="Bold" Image="ArrowRight" TextPaddingLeft="30"/>
-            <pw:NavigationButton 
-                Text="Navigation 2" 
-                BorderColor="#94c11f" BorderWidth="1" 
-                TextColor="#94c11f" BackgroundColor="#DDD" 
-                FontAttributes="Bold" TextPaddingLeft="30"/>
+            <pw:NavigationButton x:Name="B1"
+                Text="Navigation Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                BorderColor="#94c11f" BorderWidth="1"
+                TextColor="#94c11f" BackgroundColor="#DDD"
+                FontAttributes="Bold" Image="ArrowRight" Padding="120,0,10,0" />
+            <pw:NavigationButton x:Name="B2"
+                Text="Navigation "
+                BorderColor="#94c11f" BorderWidth="1"
+                TextColor="#94c11f" BackgroundColor="#DDD"
+                FontAttributes="Bold" Image="ArrowRight" Padding="120,0,10,0" />
+            <pw:NavigationButton x:Name="B3"
+                Text="Navigation 2"
+                BorderColor="#94c11f" BorderWidth="1"
+                TextColor="#94c11f" BackgroundColor="#DDD"
+                FontAttributes="Bold" Padding="120,0,10,0"/>
+            <Button
+                Text="Click to change Buttons"
+                BorderColor="#94c11f" BorderWidth="1"
+                TextColor="#94c11f" BackgroundColor="#DDD"
+                FontAttributes="Bold" Padding="120,0,10,0" Image="ArrowRight" Pressed="Handle_Pressed"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

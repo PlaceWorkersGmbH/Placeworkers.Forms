@@ -1,5 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
 	 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	 xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms" x:Class="Placeworkers.Forms.Demo.App">
+	 xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+     xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
+     x:Class="Placeworkers.Forms.Demo.App">
+    <prism:PrismApplication.Resources>
+        <ResourceDictionary>
+            <Thickness x:Key="NavButtonPadding" Left="40" Right="10" Top="0" Bottom="0"/>
+            <Style TargetType="pw:NavigationButton" x:Key="NavigationButton2">
+                <Setter Property="BackgroundColor" Value="#1267FF" />
+                <Setter Property="Padding" Value="{StaticResource NavButtonPadding}" />
+            </Style>
+        </ResourceDictionary>
+    </prism:PrismApplication.Resources>
 </prism:PrismApplication>
