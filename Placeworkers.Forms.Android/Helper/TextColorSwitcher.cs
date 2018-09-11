@@ -1,38 +1,59 @@
-﻿using Android.Content.Res;
+using System;
+using Android.Content.Res;
 using Android.Widget;
-using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
-namespace Placeworkers.Forms.Helper
+namespace Placeworkers.Forms
 {
-	public class TextColorSwitcher
-	{
-		static readonly int[][] s_colorStates = { new[] { global::Android.Resource.Attribute.StateEnabled }, new[] { -global::Android.Resource.Attribute.StateEnabled } };
+    /// <summary>
+    /// Handles color state management for the TextColor property
+    /// for Entry, Button, Picker, TimePicker, and DatePicker
+    /// </summary>
+    internal class TextColorSwitcher
+    {
+        static readonly int[][] s_colorStates = { new[] { global::Android.Resource.Attribute.StateEnabled }, new[] { -global::Android.Resource.Attribute.StateEnabled } };
 
-		readonly ColorStateList _defaultTextColors;
-		Color _currentTextColor;
+        readonly ColorStateList _defaultTextColors;
+        readonly bool _useLegacyColorManagement;
+        Color _currentTextColor;
 
-		public TextColorSwitcher(ColorStateList textColors)
-		{
-			_defaultTextColors = textColors;
-		}
+        public TextColorSwitcher(ColorStateList textColors, bool useLegacyColorManagement = true)
+        {
+            _defaultTextColors = textColors;
+            _useLegacyColorManagement = useLegacyColorManagement;
+        }
 
-		public void UpdateTextColor(TextView control, Color color)
-		{
-			if (color == _currentTextColor)
-				return;
+        public void UpdateTextColor(TextView control, Color color, Action<ColorStateList> setColor = null)
+        {
+            if (color == _currentTextColor)
+                return;
 
-			_currentTextColor = color;
+            if (setColor == null)
+            {
+                setColor = control.SetTextColor;
+            }
 
-			//if (color.IsDefault)
-			//	control.SetTextColor(_defaultTextColors);
-			//else
-			//{
-				// Set the new enabled state color, preserving the default disabled state color
-				int defaultDisabledColor = _defaultTextColors.GetColorForState(s_colorStates[1], color.ToAndroid());
-				control.SetTextColor(new ColorStateList(s_colorStates, new[] { color.ToAndroid().ToArgb(), defaultDisabledColor }));
-			//}
-		}
+            _currentTextColor = color;
 
-	}
+            if (color.IsDefault)
+            {
+                setColor(_defaultTextColors);
+            }
+            else
+            {
+                if (_useLegacyColorManagement)
+                {
+                    // Set the new enabled state color, preserving the default disabled state color
+                    var defaultDisabledColor = _defaultTextColors.GetColorForState(s_colorStates[1], color.ToAndroid());
+                    setColor(new ColorStateList(s_colorStates, new[] { color.ToAndroid().ToArgb(), defaultDisabledColor }));
+                }
+                else
+                {
+                    var acolor = color.ToAndroid().ToArgb();
+                    setColor(new ColorStateList(s_colorStates, new[] { acolor, acolor }));
+                }
+            }
+        }
+    }
 }

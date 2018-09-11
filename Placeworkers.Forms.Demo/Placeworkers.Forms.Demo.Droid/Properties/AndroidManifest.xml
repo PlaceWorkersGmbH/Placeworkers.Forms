@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Placeworkers.Forms.Demo.Droid" installLocation="auto" android:icon="@drawable/icon" android:theme="@style/MainTheme">
-	<uses-sdk android:minSdkVersion="23" />
+	<uses-sdk android:minSdkVersion="23" android:targetSdkVersion="27" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="PW.Forms Demo" android:icon="@drawable/icon"></application>
 </manifest>

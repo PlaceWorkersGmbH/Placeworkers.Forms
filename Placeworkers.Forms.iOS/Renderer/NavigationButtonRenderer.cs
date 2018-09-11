@@ -36,11 +36,9 @@ namespace Placeworkers.Forms
                 (float)(Element.Padding.Right)
             );
             Control.TitleEdgeInsets = new UIEdgeInsets(0, 0, 0, 0);
-
             Control.SemanticContentAttribute = UISemanticContentAttribute.ForceRightToLeft;
             Control.ImageView.TrailingAnchor.ConstraintEqualTo(this.TrailingAnchor, -(float)(Element.Padding.Right)).Active = true;
             Control.ImageView.CenterYAnchor.ConstraintEqualTo(this.CenterYAnchor, 0).Active = true;
-            Control.TitleLabel.TranslatesAutoresizingMaskIntoConstraints = false;
             Control.ImageView.TranslatesAutoresizingMaskIntoConstraints = false;
         }
     }

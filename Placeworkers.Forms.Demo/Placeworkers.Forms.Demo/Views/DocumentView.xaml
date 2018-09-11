@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pw:DocumentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pw="clr-namespace:Placeworkers.Forms;assembly=Placeworkers.Forms"
+    x:Class="Placeworkers.Forms.Demo.Views.DocumentView"
+    Title="{Binding Title}" FilePath="{Binding FilePath}">
+</pw:DocumentPage>

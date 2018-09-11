@@ -7,7 +7,7 @@
     <ProjectGuid>{DF6D6556-7258-4A65-9845-D3D5D1E58822}</ProjectGuid>
     <Description>Custom Controls for Xamarin.Forms</Description>
     <PackageId>Placeworkers.Forms</PackageId>
-    <PackageVersion>1.0.15</PackageVersion>
+    <PackageVersion>1.1.1</PackageVersion>
     <Authors>PlaceWorkers GmbH, Enrico Berndt</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -24,7 +24,7 @@
     <PackageLicenseUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/PlaceWorkersGmbH/Placeworkers.Forms</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/PlaceWorkersGmbH/Placeworkers.Forms/master/Placeworkers.Forms.Demo/Placeworkers.Forms.Demo.Droid/Resources/drawable-hdpi/icon.png</PackageIconUrl>
-    <ReleaseVersion>1.0.15</ReleaseVersion>
+    <ReleaseVersion>1.1.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +48,14 @@
     <ProjectReference Include="..\Placeworkers.Forms\Placeworkers.Forms.csproj">
       <Project>{40080DEA-162A-4873-AFCE-6D1ADDF0D6FC}</Project>
       <Name>Placeworkers.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Placeworkers.Forms.Android.PDFium\Placeworkers.Forms.Android.PDFium.csproj">
+      <Project>{7368AA44-A58F-4375-B4CB-0F593F92B9FD}</Project>
+      <Name>Placeworkers.Forms.Android.PDFium</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Placeworkers.Forms.Android.PDFViewer\Placeworkers.Forms.Android.PDFViewer.csproj">
+      <Project>{6BC04C85-04A3-49C0-9769-6FC2996E555E}</Project>
+      <Name>Placeworkers.Forms.Android.PDFViewer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
