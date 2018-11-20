@@ -1,6 +1,6 @@
+using System.IO;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System.IO;
 namespace Placeworkers.Forms.Demo.ViewModels
 {
     public class DocumentViewModel : BindableBase, INavigatingAware
@@ -27,7 +27,7 @@ namespace Placeworkers.Forms.Demo.ViewModels
             }
         }
 
-        public void OnNavigatingTo(NavigationParameters parameters)
+        public void OnNavigatingTo(INavigationParameters parameters)
         {
             if (parameters.TryGetValue("filePath", out string filePath))
             {

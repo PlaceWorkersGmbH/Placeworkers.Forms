@@ -224,7 +224,7 @@ namespace Placeworkers.Forms
             if (Element == null)
                 return;
 
-            var animation = ((Xamarin.Forms.Page)Element).OnThisPlatform().PreferredStatusBarUpdateAnimation();
+            var animation = ((Xamarin.Forms.Page)Element)?.OnThisPlatform()?.PreferredStatusBarUpdateAnimation() ?? PageUIStatusBarAnimation.Slide;
             if (animation == PageUIStatusBarAnimation.Fade || animation == PageUIStatusBarAnimation.Slide)
                 UIView.Animate(0.25, SetNeedsStatusBarAppearanceUpdate);
             else
