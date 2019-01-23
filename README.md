@@ -35,6 +35,11 @@ use control:
  
  var navButton = new NavigationButton(){ ... }   
 
+## Included Pages
+- **DocumentPage:** View documents in a single view. 
+ - *iOS:* QLPreviewController is used. Hence all documents supported by this preview is supported.
+ - *Android:* Currently only pdf is supported via PDFium.
+ 
 ## Included Helpers
 - **GridExtension:** Add a View to a Grid with Spans in one line.
 - **MimeTypeMapper:** Get a MimeType from a file name.

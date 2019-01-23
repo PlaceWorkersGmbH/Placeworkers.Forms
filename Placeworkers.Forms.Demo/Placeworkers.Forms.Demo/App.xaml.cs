@@ -36,7 +36,6 @@ namespace Placeworkers.Forms.Demo
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
             containerRegistry.RegisterForNavigation<MainPage>();
             containerRegistry.RegisterForNavigation<NavigationView>();
             containerRegistry.RegisterForNavigation<DateTimePickerView>();
